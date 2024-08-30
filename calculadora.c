@@ -103,6 +103,22 @@ void base10_para_complemento2(int numero) {
     printf("\n");
 }
 
+// Função para converter de real para float double
+void real_para_float_double(float numero) {
+    unsigned int bits;
+    memcpy(&bits, &numero, sizeof(bits));
+
+    unsigned int sinal = (bits >> 31) & 1;
+    unsigned int expoente = (bits >> 23) & 0xFF;
+    unsigned int fracao = bits & 0x7FFFFF;
+
+    printf("\nConvertendo %f para formato float:\n", numero);
+    printf("Sinal: %u\n", sinal);
+    printf("Expoente: %u\n", expoente);
+    printf("Expoente com viés (127): %d\n", expoente - 127);
+    printf("Fração: %u\n", fracao);
+}
+
 int main() {
     int escolha, numero;
     float numero_real;
