@@ -93,6 +93,16 @@ void base10_para_bcd(int numero) {
     printf("\n");
 }
 
+// Função para converter de base 10 para complemento a 2 (16 bits)
+void base10_para_complemento2(int numero) {
+    printf("\nConvertendo %d para complemento a 2 com 16 bits:\n", numero);
+
+    for (int i = 15; i >= 0; i--) {
+        printf("%d", (numero >> i) & 1);
+    }
+    printf("\n");
+}
+
 int main() {
     int escolha, numero;
     float numero_real;
